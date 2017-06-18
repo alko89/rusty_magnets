@@ -10,12 +10,8 @@ jQuery(function($){
     $('#search').keyup(function(){
         magnetSearch();
     });
-    $("#page").on("change", function() {
+    $("#nav select").on("change", function() {
         page = this.value;
-        magnetSearch();
-    })
-    $("#items").on("change", function() {
-        items_per_page = this.value;
         magnetSearch();
     })
 
@@ -48,7 +44,7 @@ jQuery(function($){
     
     function pagination(filtered){
             pages = filtered / items_per_page;
-            $("#page").empty();
+            $("#nav select").empty();
             
 //             if (pages < 10) {
                 for (var i = 0; i < pages; i++){
@@ -56,7 +52,7 @@ jQuery(function($){
                         var option = $('<option>').attr("value", i).attr("selected", "true").text(i + 1);
                     else
                         var option = $('<option>').attr("value", i).text(i + 1);
-                    $("#page").append(option);
+                    $("#nav select").append(option);
                 }
 //             }
     }
