@@ -2,18 +2,17 @@ jQuery(function($){
     var page = 0;
     var pages;
     var items_per_page = 10;
-
-    var txt;
+    var txt = "";
 
     magnetSearch();
 
     $('#search').keyup(function(){
         magnetSearch();
     });
-    $("#page").on("change", function() {
-        page = this.value;
-        magnetSearch();
-    })
+//     $(".page").on("click", function() {
+//         page = this.value;
+//         magnetSearch();
+//     })
     $("#items").on("change", function() {
         items_per_page = this.value;
         magnetSearch();
@@ -48,16 +47,38 @@ jQuery(function($){
     
     function pagination(filtered){
             pages = filtered / items_per_page;
-            $("#page").empty();
+            $("#pages").empty();
             
-//             if (pages < 10) {
-                for (var i = 0; i < pages; i++){
-                    if (i == page)
-                        var option = $('<option>').attr("value", i).attr("selected", "true").text(i + 1);
-                    else
-                        var option = $('<option>').attr("value", i).text(i + 1);
-                    $("#page").append(option);
-                }
-//             }
+            if (pages > 10){
+                start = 0;
+                end = pages;
+                //TODO
+            }
+            
+            for (var i = 0; i < pages; i++){
+                if (i == page)
+                    var button = $('<button/>', {
+                        type: 'button',
+                        'class': 'pure-button pure-button-disabled',
+                        text: i + 1,
+                        value: i,
+                        click: function() {
+                            page = this.value;
+                            magnetSearch();
+                        }
+                    });
+                else
+                    var button = $('<button/>', {
+                        type: 'button',
+                        'class': 'pure-button',
+                        text: i + 1,
+                        value: i,
+                        click: function() {
+                            page = this.value;
+                            magnetSearch();
+                        }
+                    });
+                $("#pages").append(button);
+            }
     }
 });
