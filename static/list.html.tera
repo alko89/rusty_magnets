@@ -1,0 +1,41 @@
+{% extends "master" %}
+
+{% block header %}
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid-theme.min.css" />
+{% endblock header %}
+
+{% block content %}
+        <div class="header">
+            <!--<h1>Magnets</h1>
+            <h2>Table of magnet links</h2>-->
+            <h2>
+                <form class="pure-form">
+                    <input class="pure-input-1" type="text" id="search" placeholder="Search"/>
+                </form>
+            </h2>
+        </div>
+
+        <div class="content">
+            <p>
+                <table class="pure-table" id="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Size</th>
+                            <th>Seeders</th>
+                            <th>Leechers</th>
+                            <th>Magnet</th>
+                            <th>Source</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </p>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.js"></script>
+        <script src="/js/script.js"></script>
+{% endblock content %}

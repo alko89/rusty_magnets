@@ -1,0 +1,23 @@
+[package]
+name = "rusty_magnets"
+version = "0.1.0"
+authors = ["Alko89 <alefer89@gmail.com>"]
+
+[dependencies]
+rocket = { git = "https://github.com/SergioBenitez/Rocket" }
+serde = "1.0"
+serde_json = "1.0"
+serde_derive = "1.0"
+r2d2 = "0.7"
+diesel = { version = "0.13", features = ["sqlite"] }
+diesel_codegen = { version = "0.13", features = ["sqlite"] }
+r2d2-diesel = "0.13"
+tera = ""
+
+[dependencies.rocket_codegen]
+git = "https://github.com/SergioBenitez/Rocket"
+
+[dependencies.rocket_contrib]
+git = "https://github.com/SergioBenitez/Rocket"
+default-features = false
+features = ["tera_templates", "json"]

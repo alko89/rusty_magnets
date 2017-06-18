@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Rocket Todo Example</title>
+  <meta name="description" content="A CMS application written in Rocket.">
+  <meta name="author" content="Aleš Ferlan">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+
+    {% block header %}{% endblock header %}
+
+</head>
+<body>
+<div id="layout">
+    <div id="main">
+        {% block content %}{% endblock content %}
+    </div>
+</div>
+
+<script src="/pure-layout/js/ui.js"></script>
+
+</body>
+</html>
