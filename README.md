@@ -15,17 +15,9 @@ for further development.
 
 ## Running
 
-**Before running, building, or testing this example, you'll need to ensure the
-following:**
+**Before running, building, or testing, you'll need to ensure the following:**
 
   1. A SQLite database file with the proper schema is present.
-
-    On a Unix machine or with bash installed, you can simply run the
-    `boostrap.sh` script to create the database. The script installs the
-    `diesel_cli` tools if they're not already installed and runs the migrations.
-    The script will output a `DATABASE_URL` variable.
-
-    You can also run the migrations manually with the following commands:
 
     ```
     cargo install diesel_cli                      # install diesel CLI tools
@@ -35,9 +27,6 @@ following:**
 
   2. A `DATABASE_URL` environment variable is set that points to the SQLite
      database file.
-
-     Use the `DATABASE_URL` variable emitted from the `bootstrap.sh` script, or
-     enter it manually, as follows:
 
      * `DATABASE_URL=db/db.sql cargo build`
      * `DATABASE_URL=db/db.sql cargo test`
