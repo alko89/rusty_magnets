@@ -4,7 +4,7 @@ extern crate serde_json;
 extern crate tera;
 
 use self::tera::Context;
-use rocket_contrib::{Template, JSON};
+use rocket_contrib::{Template, Json};
 
 use db;
 use magnet::Magnet;
@@ -37,8 +37,8 @@ fn list() -> Template {
 }
 
 #[get("/search/<query>/<page>/<size>")]
-fn search(query: String, page: i32, size: i32, conn: db::Conn) -> JSON<Message> {
-    JSON(Message{
+fn search(query: String, page: i32, size: i32, conn: db::Conn) -> Json<Message> {
+    Json(Message{
         search_string: query.clone(),
         magnets_total: Magnet::count(&String::from(""), &conn),
         magnets_filtered: Magnet::count(&query, &conn),
