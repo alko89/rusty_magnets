@@ -25,9 +25,12 @@ for further development.
     DATABASE_URL=db/db.sql diesel migration run   # create db/db.sql
     ```
 
-  2. A `DATABASE_URL` environment variable is set that points to the SQLite
+  2. Export `DATABASE_URL` environment variable that points to the SQLite
      database file.
 
-     * `DATABASE_URL=db/db.sql cargo build`
-     * `DATABASE_URL=db/db.sql cargo test`
-     * `DATABASE_URL=db/db.sql cargo run`
+     * `export DATABASE_URL=db/db.sql`
+
+  3. Run crawler and server.
+
+     * `cargo run --bin crawler`
+     * `cargo run --bin server`
